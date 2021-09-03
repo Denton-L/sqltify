@@ -14,7 +14,7 @@ def get_my_tracks(token):
         url = SAVED_TRACKS_URL
 
         while url:
-            res = s.request('GET', url, headers={'Authorization': f'Bearer {TOKEN}'})
+            res = s.request('GET', url, headers={'Authorization': f'Bearer {token}'})
             if res.status_code == 429:
                 time.sleep(int(res.headers['Retry-After']))
                 continue
