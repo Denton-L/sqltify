@@ -1,5 +1,5 @@
 SELECT
-	track.title, GROUP_CONCAT(artist.name), CAST(track.duration_ms as FLOAT) / 1000 AS seconds
+	track.title, GROUP_CONCAT(artist.name), track.duration_ms / 1000.0 AS seconds
 FROM
 	artistry
 	INNER JOIN track ON artistry.track_id = track.id

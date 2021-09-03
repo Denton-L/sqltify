@@ -1,5 +1,5 @@
 SELECT
-	artist.name, CAST(SUM(duration_ms) AS FLOAT) / 1000 / 60 / 60 AS hours
+	artist.name, SUM(duration_ms) / 1000.0 / 60 / 60 AS hours
 FROM
 	artistry
 	INNER JOIN track ON artistry.track_id = track.id
