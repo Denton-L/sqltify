@@ -1,5 +1,5 @@
 SELECT
-	artist.name, SUM(duration_ms) / 1000.0 / 60 / 60 AS hours
+	artist.name, SUM(duration_ms) / 1000.0 / 60 / 60 AS hours, SUM(duration_ms) * 100.0 / (SELECT SUM(duration_ms) FROM track) as percentage
 FROM
 	artistry
 	INNER JOIN track ON artistry.track_id = track.id

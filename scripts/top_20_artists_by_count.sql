@@ -1,5 +1,5 @@
 SELECT
-	artist.name, COUNT(*)
+	artist.name, COUNT(*), COUNT(*) * 100.0 / (SELECT COUNT(*) FROM track) AS percentage
 FROM
 	artistry
 	INNER JOIN track ON artistry.track_id = track.id
